@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: baseUrl,
     title: "TabKnight — Every tab. One shortcut.",
     description:
-      "A keyboard-first Chrome tab switcher with fuzzy search, live previews, audio controls, and local-first privacy.",
+      "A keyboard-first Chrome command surface for tabs, bookmarks, history, URLs, and web search—with local-first privacy.",
     alternates: { canonical: baseUrl.toString() },
     icons: {
       icon: "/tabknight-icon.png",
@@ -42,14 +42,14 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       url: baseUrl.toString(),
       title: "TabKnight — Every tab. One shortcut.",
-      description: "Search, preview, and switch across every Chrome window—without leaving the page.",
+      description: "Search tabs, bookmarks, history, and the web from one private Chrome command surface.",
       siteName: "TabKnight",
       images: [{ url: socialImage, width: 1672, height: 941, alt: "TabKnight — Every tab. One shortcut." }],
     },
     twitter: {
       card: "summary_large_image",
       title: "TabKnight — Every tab. One shortcut.",
-      description: "A fast, private, open-source command bar for Chrome tabs.",
+      description: "A fast, private, open-source command bar for your browser.",
       images: [socialImage],
     },
   };

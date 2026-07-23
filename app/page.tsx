@@ -1,20 +1,34 @@
-const githubUrl = "https://github.com/AitorGallardo/tabknight";
+import {
+  ArrowUpRight,
+  AtSign,
+  Code2,
+  Command,
+  PanelRightOpen,
+  Search,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { SiGooglechrome } from "react-icons/si";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+const githubUrl = "https://github.com/AitorGallardo/tabknight";
+const installUrl = `${githubUrl}#getting-started`;
 
 function Brand() {
   return (
     <a className="brand" href="#top" aria-label="TabKnight home">
-      <img src="/tabknight-icon.png" alt="" width="42" height="42" />
-      <span>
-        Tab<span>Knight</span>
-      </span>
+      <img src="/tabknight-icon.png" alt="" width="40" height="40" />
+      <span>TabKnight</span>
     </a>
   );
 }
 
 function Key({ children }: { children: React.ReactNode }) {
   return <kbd>{children}</kbd>;
+}
+
+function ExternalArrow() {
+  return <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />;
 }
 
 export default function Home() {
@@ -29,7 +43,8 @@ export default function Home() {
             <a href="#open-source">Open source</a>
           </nav>
           <a className="nav-cta" href={githubUrl} target="_blank" rel="noreferrer">
-            GitHub <Arrow />
+            <FaGithub aria-hidden="true" size={16} />
+            GitHub
           </a>
         </div>
       </header>
@@ -37,7 +52,7 @@ export default function Home() {
       <section className="hero shell" aria-labelledby="hero-title">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="status-dot" /> Open-source Chrome extension · v0.28.0
+            <span className="status-dot" /> Open source · Chrome · v0.34.3
           </div>
           <h1 id="hero-title">
             Every tab.
@@ -45,45 +60,42 @@ export default function Home() {
             <span>One shortcut.</span>
           </h1>
           <p>
-            Search, preview, and switch across every Chrome window—without leaving
-            the page you&apos;re on.
+            Search tabs, bookmarks, history, and the web from one private command
+            surface—without leaving the page you&apos;re on.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#install">
-              Get TabKnight <Arrow />
+            <a className="button button-primary" href={installUrl} target="_blank" rel="noreferrer">
+              <SiGooglechrome aria-hidden="true" size={17} />
+              Install for Chrome
             </a>
             <a className="button button-secondary" href={githubUrl} target="_blank" rel="noreferrer">
+              <FaGithub aria-hidden="true" size={18} />
               View source
             </a>
           </div>
           <div className="shortcut-line">
             <span>Open anywhere</span>
             <span className="key-combo"><Key>⌘</Key><Key>K</Key></span>
-            <span className="platform-note">macOS · Ctrl Shift K on Windows/Linux</span>
+            <span className="platform-note">Ctrl Shift K on Windows / Linux</span>
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="TabKnight command palette preview">
-          <div className="blue-orbit blue-orbit-one" />
-          <div className="blue-orbit blue-orbit-two" />
-          <div className="browser-frame">
-            <div className="browser-topbar" aria-hidden="true">
-              <div className="traffic-lights"><i /><i /><i /></div>
-              <div className="address-bar">youtube.com/watch</div>
-              <div className="browser-dots">•••</div>
-            </div>
+        <div className="hero-visual" aria-label="Current TabKnight command palette">
+          <div className="red-orbit red-orbit-one" />
+          <div className="red-orbit red-orbit-two" />
+          <div className="product-frame">
             <img
-              src="/product/overlay.jpg"
-              alt="TabKnight overlay showing a searchable tab list beside a large live preview"
-              width="1600"
-              height="1004"
+              src="/product/overlay.png"
+              alt="Current TabKnight overlay with searchable tabs, quick actions, and a rich preview"
+              width="1280"
+              height="800"
             />
           </div>
           <div className="floating-chip chip-top">
-            <span>●</span> Captured just now
+            <span className="live-dot" /> Preview ready
           </div>
           <div className="floating-chip chip-bottom">
-            <span>⌘</span> Switch in milliseconds
+            <Command aria-hidden="true" size={15} /> One command surface
           </div>
         </div>
       </section>
@@ -92,8 +104,8 @@ export default function Home() {
         <div className="shell trust-grid">
           <div><strong>Local-first</strong><span>Your data stays in Chrome</span></div>
           <div><strong>Open source</strong><span>MIT licensed on GitHub</span></div>
-          <div><strong>No accounts</strong><span>Install and start switching</span></div>
-          <div><strong>No telemetry</strong><span>Zero tracking, by design</span></div>
+          <div><strong>No account</strong><span>Install and start switching</span></div>
+          <div><strong>No telemetry</strong><span>Zero tracking by design</span></div>
         </div>
       </section>
 
@@ -103,12 +115,12 @@ export default function Home() {
           <h2>Chrome tabs multiply.<br />Your attention shouldn&apos;t.</h2>
           <div>
             <p className="lead">
-              TabKnight turns the tab strip into a fast command surface. One shortcut
-              brings every tab, in every window, into focus.
+              TabKnight turns scattered browser state into one fast, searchable
+              command surface.
             </p>
             <p>
-              Fuzzy search by title or URL, arrow through live previews, then press
-              Enter. No tab archaeology. No context switch. No mouse required.
+              Find an open tab, recover a page from history, launch a bookmark,
+              open a URL, or search the web—then act without reaching for the mouse.
             </p>
           </div>
         </div>
@@ -117,83 +129,91 @@ export default function Home() {
       <section id="features" className="features shell section-pad">
         <article className="feature feature-hero">
           <div className="feature-copy">
-            <span className="feature-number">01 / FIND</span>
-            <h2>See where you&apos;re going before you go.</h2>
+            <span className="feature-number">01 / FIND ANYTHING</span>
+            <h2>Your browser, finally searchable.</h2>
             <p>
-              Search every open tab across every window. TabKnight shows the best
-              preview available—instantly—and upgrades it in place as richer data arrives.
+              One query spans every Chrome window, bookmarks, recent history,
+              direct URLs, and web search. Results stay grouped and easy to scan.
             </p>
             <ul className="clean-list">
-              <li>Fuzzy search across titles and URLs</li>
-              <li>Live thumbnails with freshness indicators</li>
-              <li>Recent and most-visited tabs surfaced first</li>
+              <li>Universal, fuzzy intent search</li>
+              <li>Fresh previews that resolve in place</li>
+              <li>Keyboard-first navigation and actions</li>
             </ul>
           </div>
-          <div className="media-card">
-            <img
-              src="/product/demo.gif"
-              alt="Animated TabKnight demo showing search, preview and tab switching"
-              width="900"
-              height="565"
-            />
+          <div className="media-card video-card">
+            <video autoPlay muted loop playsInline poster="/product/overlay.png">
+              <source src="/product/demo.mp4" type="video/mp4" />
+            </video>
           </div>
         </article>
 
-        <div className="feature-pair">
-          <article className="feature-small audio-card">
-            <span className="feature-number">02 / CONTROL</span>
-            <h3>Your audio tabs, on command.</h3>
-            <p>
-              Press Tab to reveal every tab playing sound. Pause, play, mute, or jump
-              there without breaking focus.
-            </p>
-            <div className="audio-demo" aria-hidden="true">
-              <div className="audio-head"><span>Audio mode</span><span>♪ 3 playing</span></div>
-              <div className="audio-row selected"><i className="audio-icon">▶</i><span>Deep focus mix</span><b className="equalizer"><i /><i /><i /><i /></b></div>
-              <div className="audio-row"><i className="audio-icon">◼</i><span>Design review</span><em>muted</em></div>
-              <div className="audio-keys"><Key>Space</Key> play / pause <Key>←</Key><Key>→</Key> mute</div>
-            </div>
+        <div className="capability-grid">
+          <article className="capability-card">
+            <Search aria-hidden="true" size={20} strokeWidth={1.7} />
+            <span>Universal search</span>
+            <h3>Tabs are only the beginning.</h3>
+            <p>Jump across tabs, bookmarks, history, direct URLs, and Google results.</p>
           </article>
-
-          <article className="feature-small sessions-card">
-            <span className="feature-number">03 / RETURN</span>
-            <h3>Save the whole train of thought.</h3>
-            <p>
-              Turn a working set into a bookmark-backed session, close it cleanly,
-              and restore every tab when you&apos;re ready.
-            </p>
-            <div className="mini-shot">
-              <img
-                src="/product/popup.png"
-                alt="TabKnight popup for searching and saving a browser session"
-                width="1280"
-                height="800"
-              />
-            </div>
+          <article className="capability-card">
+            <Sparkles aria-hidden="true" size={20} strokeWidth={1.7} />
+            <span>Quick actions</span>
+            <h3>Act before you switch.</h3>
+            <p>Close, duplicate, pin, mute, and manage a result from the same surface.</p>
+          </article>
+          <article className="capability-card">
+            <PanelRightOpen aria-hidden="true" size={20} strokeWidth={1.7} />
+            <span>Native Split View</span>
+            <h3>Put pages side by side.</h3>
+            <p>Send the selected page into Chrome Split View without rebuilding your flow.</p>
           </article>
         </div>
+
+        <article className="feature search-feature">
+          <div className="feature-copy">
+            <span className="feature-number">02 / COMMAND</span>
+            <h2>Type &gt; when you know the action.</h2>
+            <p>
+              The command mode gives browser controls a searchable home, while the
+              action bar keeps the next move visible at the bottom of the palette.
+            </p>
+            <div className="command-example">
+              <span>&gt;</span>
+              <code>split view</code>
+              <Key>↵</Key>
+            </div>
+          </div>
+          <div className="media-card">
+            <img
+              src="/product/search.png"
+              alt="TabKnight universal search showing tabs, history, a direct URL, and web search"
+              width="1280"
+              height="800"
+            />
+          </div>
+        </article>
       </section>
 
       <section id="privacy" className="privacy-section section-pad">
         <div className="shell privacy-grid">
           <div className="privacy-mark" aria-hidden="true">
-            <img src="/tabknight-icon.png" alt="" width="260" height="260" />
+            <ShieldCheck size={84} strokeWidth={1.2} />
             <div className="privacy-ring" />
           </div>
           <div className="privacy-copy">
             <div className="section-kicker">Private by architecture</div>
             <h2>Your tabs are your business.</h2>
             <p className="lead">
-              No servers. No accounts. No analytics. Tab titles, URLs, snippets, and
-              preview thumbnails stay on your device in Chrome&apos;s local storage.
+              No servers. No accounts. No analytics. Tab titles, URLs, snippets,
+              and preview thumbnails stay on your device.
             </p>
             <div className="privacy-stats">
               <div><strong>0</strong><span>trackers</span></div>
               <div><strong>0</strong><span>accounts</span></div>
-              <div><strong>1 click</strong><span>to clear preview data</span></div>
+              <div><strong>Local</strong><span>browser storage</span></div>
             </div>
             <a className="text-link" href={`${githubUrl}/blob/main/PRIVACY.md`} target="_blank" rel="noreferrer">
-              Read the plain-English privacy policy <Arrow />
+              Read the privacy policy <ExternalArrow />
             </a>
           </div>
         </div>
@@ -206,12 +226,13 @@ export default function Home() {
             <h2>Inspect it. Improve it. Make it yours.</h2>
           </div>
           <a className="button button-secondary" href={githubUrl} target="_blank" rel="noreferrer">
-            Browse the repository <Arrow />
+            <FaGithub aria-hidden="true" size={18} />
+            Browse repository
           </a>
         </div>
         <div className="source-grid">
           <div className="source-card"><span>License</span><strong>MIT</strong><p>Use, study, modify, and share.</p></div>
-          <div className="source-card"><span>Built with</span><strong>React + TypeScript</strong><p>A clean, typed extension core.</p></div>
+          <div className="source-card"><span>Built with</span><strong>React + TypeScript</strong><p>A small, typed extension core.</p></div>
           <div className="source-card"><span>Platform</span><strong>Manifest V3</strong><p>Modern Chrome extension architecture.</p></div>
         </div>
       </section>
@@ -220,13 +241,14 @@ export default function Home() {
         <div className="shell install-grid">
           <div>
             <div className="section-kicker">Install from source</div>
-            <h2>Your command bar for tabs is three steps away.</h2>
+            <h2>Three steps from shortcut to flow.</h2>
             <p>
-              TabKnight is currently available as an open-source build. Grab the code,
-              build it with Bun, and load the generated folder into Chrome.
+              TabKnight is an open-source Chrome build. Clone it, build it with Bun,
+              and load the generated folder into Chrome.
             </p>
-            <a className="button button-primary" href={`${githubUrl}#getting-started`} target="_blank" rel="noreferrer">
-              Open install guide <Arrow />
+            <a className="button button-primary" href={installUrl} target="_blank" rel="noreferrer">
+              <SiGooglechrome aria-hidden="true" size={17} />
+              Open install guide
             </a>
           </div>
           <ol className="install-steps">
@@ -238,18 +260,47 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="shell footer-grid">
+        <div className="shell footer-cta">
           <div>
-            <Brand />
-            <p>Every tab. One shortcut.</p>
+            <span className="section-kicker">Close the tab gap</span>
+            <h2>Keep the thought.<br />Lose the tab hunt.</h2>
           </div>
-          <div className="footer-links">
-            <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
+          <div className="footer-actions">
+            <a className="button button-primary" href={installUrl} target="_blank" rel="noreferrer">
+              <SiGooglechrome aria-hidden="true" size={17} />
+              Install for Chrome
+            </a>
+            <a className="button button-secondary" href={githubUrl} target="_blank" rel="noreferrer">
+              <FaGithub aria-hidden="true" size={18} />
+              Star on GitHub
+            </a>
+          </div>
+        </div>
+        <div className="shell footer-main">
+          <div className="footer-brand">
+            <Brand />
+            <p>A private, open-source command bar for Chrome.</p>
+            <a href="https://x.com/gmsudo" target="_blank" rel="noreferrer">
+              <AtSign aria-hidden="true" size={15} /> Built by @gmsudo
+            </a>
+          </div>
+          <div className="footer-column">
+            <strong>Product</strong>
+            <a href="#features">Features</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#install">Install</a>
+          </div>
+          <div className="footer-column">
+            <strong>Project</strong>
+            <a href={githubUrl} target="_blank" rel="noreferrer">Repository</a>
             <a href={`${githubUrl}/issues`} target="_blank" rel="noreferrer">Issues</a>
-            <a href={`${githubUrl}/blob/main/PRIVACY.md`} target="_blank" rel="noreferrer">Privacy</a>
             <a href={`${githubUrl}/blob/main/LICENSE`} target="_blank" rel="noreferrer">MIT License</a>
           </div>
-          <p className="copyright">© 2025 Aitor Gallardo</p>
+        </div>
+        <div className="shell footer-bottom">
+          <span>© 2026 @gmsudo</span>
+          <span className="footer-status"><i /> v0.34.3 · Open source</span>
+          <span><Code2 aria-hidden="true" size={14} /> Built for the browser</span>
         </div>
       </footer>
     </main>
