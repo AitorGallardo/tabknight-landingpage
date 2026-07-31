@@ -652,18 +652,18 @@ body:has(.current-v3) {
 .current-v3 .privacy-route-beam {
   fill: none;
   stroke: #fff2ef;
-  stroke-width: 2.2;
+  stroke-width: 1.25;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: .065 .935;
-  stroke-dashoffset: 1;
+  stroke-dasharray: .052 2;
+  stroke-dashoffset: 0;
   opacity: 0;
   animation: privacy-beam-flow 4.8s linear infinite;
 }
 
 .current-v3 .privacy-route-beam-soft {
   stroke: #ff6464;
-  stroke-width: 6;
+  stroke-width: 3;
   opacity: 0;
   filter: url(#privacy-beam-soften);
 }
@@ -676,10 +676,10 @@ body:has(.current-v3) {
 }
 
 @keyframes privacy-beam-flow {
-  0%, 7% { stroke-dashoffset: 1; opacity: 0; }
+  0%, 7% { stroke-dashoffset: 0; opacity: 0; }
   12% { opacity: .86; }
-  70% { stroke-dashoffset: 0; opacity: .86; }
-  75%, 100% { stroke-dashoffset: 0; opacity: 0; }
+  70% { stroke-dashoffset: -1.06; opacity: .86; }
+  75%, 100% { stroke-dashoffset: -1.06; opacity: 0; }
 }
 
 @keyframes privacy-lock-heartbeat {
