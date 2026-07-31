@@ -194,10 +194,10 @@ export default function Home() {
         <div className="shell privacy-grid">
           <div className="privacy-visual">
             <img
-              src="/illustrations/privacy-local.png"
-              alt="Browser tabs and previews flowing into device-local storage without leaving the browser"
-              width="1254"
-              height="1254"
+              src="/illustrations/privacy-architecture-v2.png"
+              alt="Tab data following a single contained route into device-local browser storage"
+              width="1774"
+              height="887"
             />
           </div>
           <div className="privacy-copy">
