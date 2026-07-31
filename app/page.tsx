@@ -4,7 +4,6 @@ import {
   Code2,
   PanelRightOpen,
   Search,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
@@ -89,11 +88,20 @@ export default function Home() {
       </section>
 
       <section className="trust-bar" aria-label="Product principles">
-        <div className="shell trust-grid">
-          <div><strong>Local-first</strong><span>Your data stays in Chrome</span></div>
-          <div><strong>Open source</strong><span>MIT licensed on GitHub</span></div>
-          <div><strong>No account</strong><span>Install and start switching</span></div>
-          <div><strong>No telemetry</strong><span>Zero tracking by design</span></div>
+        <div className="shell trust-composition">
+          <img
+            className="principles-illustration"
+            src="/illustrations/principles-signal.png"
+            alt="A quiet signal path connecting local browsing, open code, account-free access, and zero telemetry"
+            width="2172"
+            height="724"
+          />
+          <div className="trust-grid">
+            <div><strong>Local-first</strong><span>Your data stays in Chrome</span></div>
+            <div><strong>Open source</strong><span>MIT licensed on GitHub</span></div>
+            <div><strong>No account</strong><span>Install and start switching</span></div>
+            <div><strong>No telemetry</strong><span>Zero tracking by design</span></div>
+          </div>
         </div>
       </section>
 
@@ -184,9 +192,13 @@ export default function Home() {
 
       <section id="privacy" className="privacy-section section-pad">
         <div className="shell privacy-grid">
-          <div className="privacy-mark" aria-hidden="true">
-            <ShieldCheck size={84} strokeWidth={1.2} />
-            <div className="privacy-ring" />
+          <div className="privacy-visual">
+            <img
+              src="/illustrations/privacy-local.png"
+              alt="Browser tabs and previews flowing into device-local storage without leaving the browser"
+              width="1254"
+              height="1254"
+            />
           </div>
           <div className="privacy-copy">
             <div className="section-kicker">Private by architecture</div>
