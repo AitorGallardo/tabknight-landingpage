@@ -194,7 +194,7 @@ export default function Home() {
         <div className="shell privacy-grid">
           <div className="privacy-visual">
             <img
-              src="/illustrations/privacy-architecture-v3.png"
+              src="/illustrations/privacy-architecture-v4.png"
               alt="Tab data following a contained route into a locked local-device boundary"
               width="1774"
               height="887"
