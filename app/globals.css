@@ -626,7 +626,23 @@ body:has(.current-v3) {
 .current-v3 .privacy-copy .lead { margin-top: 23px; font-size: 18px; }
 
 .current-v3 .open-source { border-bottom: 1px solid var(--architectural-line); }
-.current-v3 .source-grid { margin-inline: -32px; margin-top: 64px; gap: 0; border-top: 1px solid var(--architectural-line); }
+.current-v3 .open-source-visual {
+  height: 260px;
+  margin: 64px -32px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--architectural-line);
+}
+
+.current-v3 .open-source-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: .9;
+  mix-blend-mode: screen;
+}
+
+.current-v3 .source-grid { margin-inline: -32px; margin-top: 0; gap: 0; border-top: 0; }
 .current-v3 .source-card { min-height: 205px; padding: 28px 32px; border: 0; border-right: 1px solid var(--architectural-line); border-radius: 0; background: transparent; }
 .current-v3 .source-card:last-child { border-right: 0; }
 .current-v3 .source-card strong { font-size: 21px; }
@@ -639,7 +655,23 @@ body:has(.current-v3) {
 }
 
 .current-v3 .install-grid { min-height: 600px; grid-template-columns: 40fr 60fr; gap: 64px; padding-block: 90px; }
-.current-v3 .install-steps { gap: 0; border-top: 1px solid var(--architectural-line); }
+.current-v3 .install-panel { min-width: 0; }
+.current-v3 .install-flow-visual {
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-block: 1px solid var(--architectural-line);
+}
+
+.current-v3 .install-flow-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: .92;
+  mix-blend-mode: screen;
+}
+
+.current-v3 .install-steps { gap: 0; border-top: 0; }
 .current-v3 .install-steps li { padding: 17px 0; border: 0; border-bottom: 1px solid var(--architectural-line); border-radius: 0; background: transparent; }
 .current-v3 .install-steps li > span { border-color: rgba(255, 99, 99, .2); border-radius: 7px; }
 
@@ -673,6 +705,8 @@ body:has(.current-v3) {
   .current-v3 .trust-grid { min-height: 0; }
   .current-v3 .trust-grid > div { background: transparent; }
   .current-v3 .privacy-visual { width: min(100%, 320px); }
+  .current-v3 .open-source-visual { display: none; }
+  .current-v3 .install-flow-visual { margin-bottom: 8px; }
   .current-v3 .problem h2,
   .current-v3 .open-source h2,
   .current-v3 .privacy-copy h2,

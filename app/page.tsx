@@ -230,6 +230,14 @@ export default function Home() {
             Browse repository
           </a>
         </div>
+        <div className="open-source-visual">
+          <img
+            src="/illustrations/open-source-graph.png"
+            alt="A public source tree branching through an open module and resolving into a shared contribution"
+            width="2172"
+            height="724"
+          />
+        </div>
         <div className="source-grid">
           <div className="source-card"><span>License</span><strong>MIT</strong><p>Use, study, modify, and share.</p></div>
           <div className="source-card"><span>Built with</span><strong>React + TypeScript</strong><p>A small, typed extension core.</p></div>
@@ -251,11 +259,21 @@ export default function Home() {
               Open install guide
             </a>
           </div>
-          <ol className="install-steps">
-            <li><span>1</span><div><strong>Clone the repository</strong><code>git clone github.com/AitorGallardo/tabknight</code></div></li>
-            <li><span>2</span><div><strong>Build TabKnight</strong><code>bun install &amp;&amp; bun run build</code></div></li>
-            <li><span>3</span><div><strong>Load the extension</strong><p>Chrome → Extensions → Load unpacked → choose <code>dist/</code></p></div></li>
-          </ol>
+          <div className="install-panel">
+            <div className="install-flow-visual">
+              <img
+                src="/illustrations/install-source-flow.png"
+                alt="Source files passing through a terminal build and ending as an installed browser extension"
+                width="1774"
+                height="887"
+              />
+            </div>
+            <ol className="install-steps">
+              <li><span>1</span><div><strong>Clone the repository</strong><code>git clone github.com/AitorGallardo/tabknight</code></div></li>
+              <li><span>2</span><div><strong>Build TabKnight</strong><code>bun install &amp;&amp; bun run build</code></div></li>
+              <li><span>3</span><div><strong>Load the extension</strong><p>Chrome → Extensions → Load unpacked → choose <code>dist/</code></p></div></li>
+            </ol>
+          </div>
         </div>
       </section>
 
