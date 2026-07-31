@@ -33,7 +33,7 @@ function ExternalArrow() {
 
 export default function Home() {
   return (
-    <main id="top">
+    <main id="top" className="current-v3">
       <header className="site-header">
         <div className="shell nav-shell">
           <Brand />
@@ -150,19 +150,31 @@ export default function Home() {
 
         <div className="capability-grid">
           <article className="capability-card">
-            <Search aria-hidden="true" size={20} strokeWidth={1.7} />
+            <div className="motion-icon motion-search" aria-hidden="true">
+              <Search size={20} strokeWidth={1.7} />
+              <i />
+              <i />
+            </div>
             <span>Universal search</span>
             <h3>Tabs are only the beginning.</h3>
             <p>Jump across tabs, bookmarks, history, direct URLs, and Google results.</p>
           </article>
           <article className="capability-card">
-            <Sparkles aria-hidden="true" size={20} strokeWidth={1.7} />
+            <div className="motion-icon motion-actions" aria-hidden="true">
+              <Sparkles size={20} strokeWidth={1.7} />
+              <i />
+              <i />
+            </div>
             <span>Quick actions</span>
             <h3>Act before you switch.</h3>
             <p>Close, duplicate, pin, mute, and manage a result from the same surface.</p>
           </article>
           <article className="capability-card">
-            <PanelRightOpen aria-hidden="true" size={20} strokeWidth={1.7} />
+            <div className="motion-icon motion-split" aria-hidden="true">
+              <PanelRightOpen size={20} strokeWidth={1.7} />
+              <i />
+              <i />
+            </div>
             <span>Native Split View</span>
             <h3>Put pages side by side.</h3>
             <p>Send the selected page into Chrome Split View without rebuilding your flow.</p>
