@@ -29,6 +29,43 @@ function ExternalArrow() {
   return <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />;
 }
 
+function PrivacyFlowIllustration() {
+  const route = "M473 346 H606 C618 346 625 353 625 365 V510 C625 522 632 529 645 529 H1134";
+
+  return (
+    <div
+      className="privacy-visual privacy-visual-animated"
+      role="img"
+      aria-label="Tab data following a contained route into a locked local-device boundary"
+    >
+      <div className="privacy-artwork">
+        <img
+          src="/illustrations/privacy-architecture-v4.png"
+          alt=""
+          width="1774"
+          height="887"
+        />
+        <svg
+          className="privacy-flow-overlay"
+          viewBox="0 0 1774 887"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <filter id="privacy-beam-soften" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1.4" />
+            </filter>
+          </defs>
+          <path className="privacy-route-beam privacy-route-beam-soft" d={route} pathLength="1" />
+          <path className="privacy-route-beam" d={route} pathLength="1" />
+          <circle className="privacy-lock-heartbeat" cx="1134" cy="529" r="12" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main id="top" className="current-v3">
@@ -192,14 +229,7 @@ export default function Home() {
 
       <section id="privacy" className="privacy-section section-pad">
         <div className="shell privacy-grid">
-          <div className="privacy-visual">
-            <img
-              src="/illustrations/privacy-architecture-v4.png"
-              alt="Tab data following a contained route into a locked local-device boundary"
-              width="1774"
-              height="887"
-            />
-          </div>
+          <PrivacyFlowIllustration />
           <div className="privacy-copy">
             <div className="section-kicker">Private by architecture</div>
             <h2>Your tabs are your business.</h2>
