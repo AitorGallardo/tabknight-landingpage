@@ -2,7 +2,6 @@ import {
   ArrowUpRight,
   AtSign,
   Code2,
-  Command,
   PanelRightOpen,
   Search,
   ShieldCheck,
@@ -81,21 +80,10 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" aria-label="Current TabKnight command palette">
-          <div className="red-orbit red-orbit-one" />
-          <div className="red-orbit red-orbit-two" />
           <div className="product-frame">
-            <img
-              src="/product/overlay.png"
-              alt="Current TabKnight overlay with searchable tabs, quick actions, and a rich preview"
-              width="1280"
-              height="800"
-            />
-          </div>
-          <div className="floating-chip chip-top">
-            <span className="live-dot" /> Preview ready
-          </div>
-          <div className="floating-chip chip-bottom">
-            <Command aria-hidden="true" size={15} /> One command surface
+            <video autoPlay muted loop playsInline poster="/product/overlay.png" aria-label="TabKnight searching tabs and running browser commands">
+              <source src="/product/hero-demo-hd.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
@@ -143,38 +131,26 @@ export default function Home() {
           </div>
           <div className="media-card video-card">
             <video autoPlay muted loop playsInline poster="/product/overlay.png">
-              <source src="/product/demo.mp4" type="video/mp4" />
+              <source src="/product/search-demo-hd.mp4" type="video/mp4" />
             </video>
           </div>
         </article>
 
         <div className="capability-grid">
           <article className="capability-card">
-            <div className="motion-icon motion-search" aria-hidden="true">
-              <Search size={20} strokeWidth={1.7} />
-              <i />
-              <i />
-            </div>
+            <Search aria-hidden="true" size={20} strokeWidth={1.7} />
             <span>Universal search</span>
             <h3>Tabs are only the beginning.</h3>
             <p>Jump across tabs, bookmarks, history, direct URLs, and Google results.</p>
           </article>
           <article className="capability-card">
-            <div className="motion-icon motion-actions" aria-hidden="true">
-              <Sparkles size={20} strokeWidth={1.7} />
-              <i />
-              <i />
-            </div>
+            <Sparkles aria-hidden="true" size={20} strokeWidth={1.7} />
             <span>Quick actions</span>
             <h3>Act before you switch.</h3>
             <p>Close, duplicate, pin, mute, and manage a result from the same surface.</p>
           </article>
           <article className="capability-card">
-            <div className="motion-icon motion-split" aria-hidden="true">
-              <PanelRightOpen size={20} strokeWidth={1.7} />
-              <i />
-              <i />
-            </div>
+            <PanelRightOpen aria-hidden="true" size={20} strokeWidth={1.7} />
             <span>Native Split View</span>
             <h3>Put pages side by side.</h3>
             <p>Send the selected page into Chrome Split View without rebuilding your flow.</p>
