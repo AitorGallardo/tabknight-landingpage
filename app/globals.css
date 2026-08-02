@@ -19,6 +19,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  color-scheme: dark;
 }
 
 body {
@@ -38,6 +39,13 @@ a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 img, video { display: block; max-width: 100%; }
 ::selection { background: var(--red-solid); color: white; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
 
 .shell { width: var(--shell); margin-inline: auto; }
 
@@ -760,5 +768,142 @@ body:has(.current-v3) {
   .current-v3 .privacy-lock-heartbeat {
     animation: none;
     opacity: 0;
+  }
+}
+
+/* Current V3 follows the operating-system appearance without storing an override. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --ink: #f7f7f4;
+    --panel: #ffffff;
+    --panel-2: #f1f1ee;
+    --panel-3: #e8e8e4;
+    --line: rgba(12, 12, 12, .11);
+    --text: #11110f;
+    --muted: #666660;
+    --red: #d52b2b;
+    --red-solid: #c92626;
+    --green: #25825a;
+    --architectural-line: rgba(12, 12, 12, .09);
+  }
+
+  html { color-scheme: light; }
+
+  body,
+  body:has(.current-v3),
+  .current-v3 {
+    background: #f7f7f4;
+    color: var(--text);
+  }
+
+  .current-v3 .site-header {
+    background: rgba(247, 247, 244, .9);
+  }
+
+  .current-v3 nav,
+  .current-v3 .eyebrow,
+  .current-v3 .shortcut-line,
+  .current-v3 .footer-brand > a {
+    color: #666660;
+  }
+
+  .current-v3 nav a:hover,
+  .current-v3 .footer-column a:hover,
+  .current-v3 .footer-brand > a:hover {
+    color: #11110f;
+  }
+
+  .current-v3 .nav-cta,
+  .current-v3 .button-secondary {
+    background: rgba(12, 12, 12, .025);
+  }
+
+  .current-v3 .nav-cta:hover,
+  .current-v3 .button-secondary:hover {
+    background: rgba(12, 12, 12, .06);
+    border-color: rgba(12, 12, 12, .2);
+  }
+
+  .current-v3 .hero h1 span { text-shadow: none; }
+  .current-v3 .hero-copy > p { color: #555550; }
+  .current-v3 .platform-note { color: #777771; }
+
+  .current-v3 kbd {
+    border-color: rgba(12, 12, 12, .15);
+    border-bottom-color: rgba(12, 12, 12, .28);
+    background: linear-gradient(#ffffff, #ebebe7);
+    color: #242420;
+    box-shadow: 0 2px 0 #c9c9c3 !important;
+  }
+
+  .current-v3 .hero-visual::before,
+  .current-v3 .hero-visual::after {
+    background: rgba(12, 12, 12, .16);
+  }
+
+  .current-v3 .product-frame,
+  .current-v3 .media-card {
+    border-color: rgba(12, 12, 12, .16);
+    background: #111113;
+  }
+
+  .current-v3 .hero-visual:hover .product-frame {
+    border-color: rgba(12, 12, 12, .26);
+  }
+
+  .current-v3 .principles-illustration,
+  .current-v3 .privacy-artwork img {
+    filter: invert(1) hue-rotate(180deg) saturate(.9);
+    mix-blend-mode: multiply;
+  }
+
+  .current-v3 .trust-grid > div {
+    background: linear-gradient(180deg, #f7f7f4 0, rgba(247, 247, 244, .92) 22%, rgba(247, 247, 244, 0) 54%);
+  }
+
+  .current-v3 .trust-grid span,
+  .current-v3 .privacy-stats span,
+  .current-v3 .source-card span,
+  .current-v3 .footer-brand > p,
+  .current-v3 .footer-column,
+  .current-v3 .footer-bottom {
+    color: #70706a;
+  }
+
+  .current-v3 .problem-grid p,
+  .current-v3 .feature-copy > p,
+  .current-v3 .capability-card p,
+  .current-v3 .source-card p,
+  .current-v3 .install-section p,
+  .current-v3 .install-steps code,
+  .current-v3 .install-steps p {
+    color: #5e5e58;
+  }
+
+  .current-v3 .problem-grid .lead,
+  .current-v3 .clean-list,
+  .current-v3 .privacy-copy .lead,
+  .current-v3 .text-link,
+  .current-v3 .footer-column strong {
+    color: #343430;
+  }
+
+  .current-v3 .command-example {
+    background: #f0f0ed;
+  }
+
+  .current-v3 .command-example code { color: #32322e; }
+
+  .current-v3 .privacy-section {
+    background: #f2f2ef;
+  }
+
+  .current-v3 .privacy-route-beam { stroke: #5b1717; }
+  .current-v3 .privacy-route-beam-soft,
+  .current-v3 .privacy-lock-heartbeat { stroke: #d52b2b; fill: #d52b2b; }
+
+  .current-v3 .install-section,
+  .current-v3 footer {
+    background: #f7f7f4;
   }
 }
