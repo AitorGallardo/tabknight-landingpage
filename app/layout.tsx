@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,47 +12,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const incoming = await headers();
-  const host = incoming.get("x-forwarded-host") ?? incoming.get("host") ?? "localhost:3000";
-  const protocol = incoming.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  let baseUrl: URL;
+const baseUrl = new URL("https://tabknight.gmsudo.com");
+const socialImage = new URL("/og.png", baseUrl).toString();
 
-  try {
-    baseUrl = new URL(`${protocol}://${host}`);
-  } catch {
-    baseUrl = new URL("http://localhost:3000");
-  }
-
-  const socialImage = new URL("/og.png", baseUrl).toString();
-
-  return {
-    metadataBase: baseUrl,
+export const metadata: Metadata = {
+  metadataBase: baseUrl,
+  title: "TabKnight — Every tab. One shortcut.",
+  description:
+    "A keyboard-first Chrome command surface for tabs, bookmarks, history, URLs, and web search—with local-first privacy.",
+  alternates: { canonical: baseUrl.toString() },
+  icons: {
+    icon: "/tabknight-icon.png",
+    shortcut: "/tabknight-icon.png",
+    apple: "/tabknight-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    url: baseUrl.toString(),
     title: "TabKnight — Every tab. One shortcut.",
-    description:
-      "A keyboard-first Chrome command surface for tabs, bookmarks, history, URLs, and web search—with local-first privacy.",
-    alternates: { canonical: baseUrl.toString() },
-    icons: {
-      icon: "/tabknight-icon.png",
-      shortcut: "/tabknight-icon.png",
-      apple: "/tabknight-icon.png",
-    },
-    openGraph: {
-      type: "website",
-      url: baseUrl.toString(),
-      title: "TabKnight — Every tab. One shortcut.",
-      description: "Search tabs, bookmarks, history, and the web from one private Chrome command surface.",
-      siteName: "TabKnight",
-      images: [{ url: socialImage, width: 1672, height: 941, alt: "TabKnight — Every tab. One shortcut." }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "TabKnight — Every tab. One shortcut.",
-      description: "A fast, private, open-source command bar for your browser.",
-      images: [socialImage],
-    },
-  };
-}
+    description: "Search tabs, bookmarks, history, and the web from one private Chrome command surface.",
+    siteName: "TabKnight",
+    images: [{ url: socialImage, width: 1672, height: 941, alt: "TabKnight — Every tab. One shortcut." }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TabKnight — Every tab. One shortcut.",
+    description: "A fast, private, open-source command bar for your browser.",
+    images: [socialImage],
+  },
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
